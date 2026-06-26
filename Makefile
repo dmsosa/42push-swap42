@@ -14,6 +14,8 @@ CFILES = push_swap.c \
 	core/ft_sort_chunks.c \
 	operations/push/ft_push.c \
 	operations/rotate/ft_rotate.c \
+	operations/swap/ft_swap.c \
+	operations/reverse/ft_reverse.c \
 	parsing/ft_parse.c \
 	parsing/ft_parse_stack.c \
 	parsing/ft_parse_utils.c \

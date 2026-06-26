@@ -6,7 +6,7 @@
 /*   By: durisosa <durisosa@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/20 17:48:38 by durisosa          #+#    #+#             */
-/*   Updated: 2026/06/26 12:33:13 by durisosa         ###   ########.fr       */
+/*   Updated: 2026/06/26 17:29:00 by durisosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,11 +67,13 @@ void	ft_assing_index(t_stack **stack)
 	t_stack	*tmp;
 	int		i;
 
+	if (!stack)
+		return ;
 	i = 0;
 	cursor = *stack;
 	while (cursor != NULL)
 	{
-		tmp = stack;
+		tmp = *stack;
 		i = 0;
 		while (tmp != NULL)
 		{

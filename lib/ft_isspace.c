@@ -1,42 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parse_utils_2.c                                 :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: durisosa <durisosa@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/20 17:59:26 by durisosa          #+#    #+#             */
-/*   Updated: 2026/06/26 17:20:44 by durisosa         ###   ########.fr       */
+/*   Created: 2026/06/26 17:21:02 by durisosa          #+#    #+#             */
+/*   Updated: 2026/06/26 17:21:09 by durisosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
 int	ft_isspace(char c)
 {
 	return (c == ' ' || c == '\t' || c == '\n'
 		|| c == '\r' || c == '\v' || c == '\f');
-}
-
-int	ft_valid_int(char *nbrstr)
-{
-	int	i;
-
-	i = 0;
-	if (nbrstr[i] == '-' || nbrstr[i] == '+')
-		i++;
-	if (!nbrstr[i] || !nbrstr)
-		return (0);
-	while (nbrstr[i])
-	{
-		if (!ft_isdigit(nbrstr[i]))
-			return (0);
-		i++;
-	}
-	return (1);
-}
-
-int	ft_int_range(long n)
-{
-	return (n >= INT_MIN && n <= INT_MAX);
 }

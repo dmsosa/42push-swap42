@@ -6,7 +6,7 @@
 /*   By: durisosa <durisosa@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 17:39:01 by durisosa          #+#    #+#             */
-/*   Updated: 2026/06/26 13:19:33 by durisosa         ###   ########.fr       */
+/*   Updated: 2026/06/26 17:31:56 by durisosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,7 @@ void	ft_sort_three(t_stack **stack, t_pushswap *pushswap)
 	first = *stack;
 	first = (*stack)->next;
 	first = (*stack)->next->next;
-	if (ft_stacksorted(stack))
+	if (ft_stacksorted(*stack))
 		return ;
 	ft_sort_three_helper(stack, pushswap);
 }
-

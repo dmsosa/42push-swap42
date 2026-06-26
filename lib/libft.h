@@ -6,7 +6,7 @@
 /*   By: durisosa <durisosa@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 14:13:25 by durisosa          #+#    #+#             */
-/*   Updated: 2026/06/26 13:46:53 by durisosa         ###   ########.fr       */
+/*   Updated: 2026/06/26 17:23:06 by durisosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,11 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strdup(const char *s);
 char	*ft_strjoin(const char *s1, const char *s2);
-int		count_words(char *str);
+int		ft_count_words(char *str);
+int		ft_count_words(char *str);
+char	*ft_strdup(const char *s);
+int		ft_isspace(char c);
+char	**ft_split(const char *s, char c);
 
 /* FILE DESCRIPTORS -----------------------------------------------------  */
 

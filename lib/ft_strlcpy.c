@@ -1,42 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parse_utils_2.c                                 :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: durisosa <durisosa@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/20 17:59:26 by durisosa          #+#    #+#             */
-/*   Updated: 2026/06/26 17:20:44 by durisosa         ###   ########.fr       */
+/*   Created: 2026/05/25 19:01:17 by durisosa          #+#    #+#             */
+/*   Updated: 2026/05/27 12:45:40 by durisosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	ft_isspace(char c)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	return (c == ' ' || c == '\t' || c == '\n'
-		|| c == '\r' || c == '\v' || c == '\f');
-}
-
-int	ft_valid_int(char *nbrstr)
-{
-	int	i;
+	size_t	i;
 
 	i = 0;
-	if (nbrstr[i] == '-' || nbrstr[i] == '+')
-		i++;
-	if (!nbrstr[i] || !nbrstr)
-		return (0);
-	while (nbrstr[i])
+	if (size != 0)
 	{
-		if (!ft_isdigit(nbrstr[i]))
-			return (0);
-		i++;
+		while (src[i] && i < size - 1)
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
 	}
-	return (1);
-}
-
-int	ft_int_range(long n)
-{
-	return (n >= INT_MIN && n <= INT_MAX);
+	return (ft_strlen(src));
 }

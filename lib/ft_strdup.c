@@ -1,42 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parse_utils_2.c                                 :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: durisosa <durisosa@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/20 17:59:26 by durisosa          #+#    #+#             */
-/*   Updated: 2026/06/26 17:20:44 by durisosa         ###   ########.fr       */
+/*   Created: 2026/01/29 19:21:41 by durisosa          #+#    #+#             */
+/*   Updated: 2026/06/26 17:18:53 by durisosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	ft_isspace(char c)
+char	*ft_strdup(const char *s)
 {
-	return (c == ' ' || c == '\t' || c == '\n'
-		|| c == '\r' || c == '\v' || c == '\f');
-}
+	int		i;
+	int		len;
+	char	*ptr;
 
-int	ft_valid_int(char *nbrstr)
-{
-	int	i;
-
+	len = ft_strlen(s);
+	ptr = malloc((len + 1) * sizeof(char));
+	if (ptr == NULL)
+		return (NULL);
 	i = 0;
-	if (nbrstr[i] == '-' || nbrstr[i] == '+')
-		i++;
-	if (!nbrstr[i] || !nbrstr)
-		return (0);
-	while (nbrstr[i])
+	while (i < len)
 	{
-		if (!ft_isdigit(nbrstr[i]))
-			return (0);
+		ptr[i] = s[i];
 		i++;
 	}
-	return (1);
-}
-
-int	ft_int_range(long n)
-{
-	return (n >= INT_MIN && n <= INT_MAX);
+	ptr[i] = 0;
+	return (ptr);
 }
